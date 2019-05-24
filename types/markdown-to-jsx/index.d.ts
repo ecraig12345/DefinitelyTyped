@@ -15,9 +15,9 @@ export interface MarkdownProps {
     children?: React.ReactNode;
 }
 
-export type ComponentOverride = string | React.ComponentClass | React.SFC | {
-    component: string | React.ComponentClass | React.SFC;
-    props?: any;
+export type ComponentOverride<P = {}, S = {}> = string | React.ComponentClass<P, S> | React.SFC<P> | {
+    component: string | React.ComponentClass<P, S> | React.SFC<P>;
+    props?: P;
 };
 
 export interface MarkdownOptions {
